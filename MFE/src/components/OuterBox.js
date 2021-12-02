@@ -1,11 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import InnerBox from './InnerBox'
 
 
-class  OuterBox extends Component {
-    render(){
-        return <InnerBox />
-    }
-}
-
-export default OuterBox;
+const OuterBox = () => <InnerBox />
+export default OuterBox ;

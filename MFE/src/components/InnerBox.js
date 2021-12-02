@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
-import Consumer from '../../store/Consumer'
+import React, { useContext } from 'react';
+import ContextDB from '../../store/Context'
 
-class InnerBox extends Component {
+function InnerBox() {
 
-        render(){
-            return(
-                <Consumer>
-                    {value => this.renderWithContextValues(value)}
-                </Consumer>
-            ) 
-        }
+    const {jwt, isTestEnvironment, firstName, setState} = useContext(ContextDB);
 
-        renderWithContextValues(ctx){
-            const {jwt, isTestEnvironment, firstName} = ctx;
-            return(
-                <React.Fragment>
-                    <p>JWT: <strong>{jwt}</strong></p>
-                    <p>Is Test Environment: <strong>{isTestEnvironment ? 'True' : 'False'}</strong> </p>
-                    <p>FirstName: <strong>{firstName}</strong> </p>
-                </React.Fragment>
-            ) 
-        }
+    if(jwt != '999999999'){
+        setState(prevState => ({
+            ...prevState,
+            jwt: '999999999'
+        }))
+    }
+    
+    return(
+        <React.Fragment>
+            <p>JWT: <strong>{jwt}</strong></p>
+            <p>Is Test Environment: <strong>{isTestEnvironment ? 'True' : 'False'}</strong> </p>
+            <p>FirstName: <strong>{firstName}</strong> </p>
+        </React.Fragment>
+    ) 
 }
 
 export default InnerBox;

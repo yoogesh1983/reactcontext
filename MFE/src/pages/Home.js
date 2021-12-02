@@ -1,12 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import OuterBox from '../components/OuterBox';
 
-
-class Home extends Component {
-
-    render(){
-        return <OuterBox />
-    }
-}
-
-export default Home;
+const Home = () => <OuterBox />
+export default Home ;
