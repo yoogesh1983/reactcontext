@@ -3,6 +3,7 @@ import OuterBox from '../components/OuterBox';
 
 
 class Home extends Component {
+
     render(){
         return <OuterBox />
     }

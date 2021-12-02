@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Home from '../src/pages/Home'
+import Provider from '../store/Provider'
 
 class Router extends Component {
 
-    constructor(props){
-        super(props)
-    }
-    
     render(){
         return(
-               <Home />
+            <Provider>
+                <Home />
+            </Provider>
         );
     }
 }

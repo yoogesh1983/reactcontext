@@ -1,8 +1,8 @@
 import React from 'react';
 
 const ContextDB = React.createContext({
-    jwt: '1qaswer43hj5rgf', 
-    isTestEnvironment: true
+    jwt: '', 
+    isTestEnvironment: false
 });
 
 console.log("Default Context is", ContextDB)
